@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$().ready(function() {
+			var url = "/csAjax/aj";
+			var params = {
+				"username": "xxm(小小明)",
+				"password": "1234"
+			};
+			$("#b").click(function() {
+				$.ajax({
+					"type":"post",
+					"url":url,
+					"data":params,
+					"dataType":"json",
+					"async":true,
+					"success":function(data){
+						alert(data.cs);
+					},
+					"error":function(){
+						alert("服务器繁忙，请稍后重试");
+					},
+				});
+//				$.post(url ,params, function (data) {
+//					alert(data.message)
+//				})
+//				$(this).load(url,params, function(data) {
+//					var jsonData = eval("("+data+")");
+//					alert(jsonData.message);
+//				})
+			})
+		})
+	</script>
+
+	<body>
+		<input type="button" name="b" id="b" value="ajax" />
+	</body>
+
+</html>
