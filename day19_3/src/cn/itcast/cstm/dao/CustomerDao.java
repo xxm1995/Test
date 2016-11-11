@@ -18,6 +18,7 @@ import cn.itcast.jdbc.TxQueryRunner;
  * 
  * @author cxf
  * 
+ * 
  */
 public class CustomerDao {
 	private QueryRunner qr = new TxQueryRunner();
